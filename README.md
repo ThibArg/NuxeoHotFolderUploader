@@ -24,6 +24,8 @@ If `$2` is passed, once a file of the hot folder has been sent to Nuxeo, it is m
 ###Main principles
 The script gets the kind (Nuxeo document type:  `File`, `Picture` or `Video`) of the binary file, based on its mime-type. It adds some adjustement when our testing showed that a `File`document was created for a `raw`picture for example.
 
+The script ignores files whose name starts with "." (invisible.)
+
 What you may need to change:
 
 * Variables at the top  of the script:
