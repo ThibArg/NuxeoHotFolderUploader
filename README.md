@@ -18,7 +18,7 @@ Parameters:
 * $1 is the path to the ot folder
 * $2 is optionnal: Path to a backup folder
 
-If `$2` is passed, once a file of the hot folder has been sent to Nuxeo, it is moved (`mv`) to this folder instead of being deleted (`rm`).
+If `$2` is used, files of the hot folder sent to Nuxeo are moved (`mv`) to this folder instead of being deleted (`rm`).
 
 
 ###Main principles
