@@ -51,7 +51,8 @@ The script is quite simple. It was built for a quick Proof of Concept, and deser
   * If an error occurs with `curl`, do not delete the file, move it somewhere else (when `$2`is not passed)
   * If an error occurs, report it in the log
 * Handle sub-folders and sub-sub-folders and etc.
-
+* Handle sending metadata. For example aFile.doc and aFile.metadata, the later containing JSON, of any other key/value information
+* Handling custom document type based not only on the mime-type but also on "something else": Prefix in the file name, or a aFile.documenttype file near the aFile.doc, ... 
 
 
 ###License: MIT
