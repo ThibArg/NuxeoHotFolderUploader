@@ -50,7 +50,7 @@ The script is quite simple. It was built for a quick Proof of Concept, and deser
 * Better error handling:
   * If an error occurs with `curl`, do not delete the file, move it somewhere else (when `$2`is not passed)
   * If an error occurs, report it in the log
-* . . .
+* Handle sub-folders and sub-sub-folders and etc.
 
 
 
