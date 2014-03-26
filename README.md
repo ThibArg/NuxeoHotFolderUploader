@@ -37,7 +37,7 @@ What you may need to change:
   * `NUXEO_DESTINATION_URL`:
     * The destination path, on nuxeo server.
     * *IMPORTANT*: Make sure the user (`USER_LOGIN`/`USER_PWD`) has the right to create document at this path
-  * `LOG_PATH`: This one is set to save the log in the $HOME folder of the current user. Something you may want to change.
+  * `LOG_PATH`: This one is set to save the log in the `$HOME` folder of the current user. Something you may want to change.
 * Mime-type detection: Add your specific types, Nuxeo document types, etc.
 
 Also, make sure the Linux/Mac OS user running the script has enough right to read/write the hot folder.
