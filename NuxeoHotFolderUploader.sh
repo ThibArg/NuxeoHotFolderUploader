@@ -83,12 +83,12 @@ function send_to_nuxeo {
     filename_clean=${filename// /_}
   
     echo "Sending file $filename, type $doc_type" >> $LOG_PATH
-    curl -H "X-Batch-Id: $filename_clean" -H "X-File-Idx:0" -H "X-File-Name:$filename" -F file=@"$file_full_path" -u "${USER_LOGIN}":"${USER_PWD}" "${SERVER_BASE_URL}/api/v1/automation/batch/upload" | tee -a $LOG_PATH
+    curl -H "X-Batch-Id: $filename_clean" -H "X-File-Idx:0" -H "X-File-Name:$filename" -F file=@"$file_full_path" -u "${USER_LOGIN}":"${USER_PWD}" "${SERVER_BASE_URL}/site/automation/batch/upload" | tee -a $LOG_PATH
     
     # Used during devug, mainly
     #echo "" >> $LOG_PATH
     #echo "CHECKING THE BATCH" >> $LOG_PATH
-    #curl -u "${USER_LOGIN}":"${USER_PWD}" "${SERVER_BASE_URL}/api/v1/automation/batch/files/$filename_clean" >> $LOG_PATH | tee -a $LOG_PATH
+    #curl -u "${USER_LOGIN}":"${USER_PWD}" "${SERVER_BASE_URL}/site/automation/batch/files/$filename_clean" >> $LOG_PATH | tee -a $LOG_PATH
   
     { echo ""; echo "Creating a $doc_type document"; } >> $LOG_PATH
     curl -X POST -H "Content-Type: application/json" -u "${USER_LOGIN}":"${USER_PWD}" -d "{ \"entity-type\": \"document\", \"name\":\"${filename_clean}\", \"type\": \"${doc_type}\", \"properties\" : { \"dc:title\":\"${filename}\",\"file:content\": {\"upload-batch\":\"${filename_clean}\",\"upload-fileId\":\"0\"}}}" "${NUXEO_DESTINATION_URL}" | tee -a $LOG_PATH
